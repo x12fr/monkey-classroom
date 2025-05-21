@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classroom Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="joinPage">
+    <h1>Join a Classroom</h1>
+    <input id="username" placeholder="Your Name" />
+    <input id="room" placeholder="Classroom Code" />
+    <button onclick="joinRoom()">Join</button>
+  </div>
 
+  <div id="classroomPage" style="display:none;">
+    <h2 id="roomHeader">Classroom</h2>
+    <button onclick="leaveRoom()">Leave</button>
+    <div id="chat"></div>
+    <input id="message" placeholder="Type a comment" onkeydown="if(event.key==='Enter') sendMessage()" />
+    <input type="file" id="fileInput" />
+    <button onclick="uploadFile()">Send File</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
